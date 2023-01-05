@@ -1,0 +1,12 @@
+package egovframework.example.sample.service.impl;
+
+import egovframework.example.sample.service.DeptVo;
+import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
+@Repository("deptDAO")
+public class DeptDAO extends EgovAbstractDAO{
+	// 데이터베이스와 연결
+	public String InsertDept(DeptVo vo) throws Exception {
+		return (String)insert("deptDAO.InsertDept" , vo);
+	}
+	
+}

@@ -1,0 +1,10 @@
+package egovframework.example.sample.service;
+
+/* interface file 입니다. */
+public interface DeptService {
+	public String InsertDept(DeptVo vo) throws Exception;
+	/*
+	 * 
+	 * */
+}
+

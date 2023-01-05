@@ -1,0 +1,8 @@
+package egovframework.example.sample.service.impl;
+
+import egovframework.example.sample.service.DeptService;
+
+// 서비스와 연결 해주는 파일
+public class DeptServiceImpl implements DeptService{
+	
+}

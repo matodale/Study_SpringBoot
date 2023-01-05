@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부서관리 테스트 및 데이터 전달 테스트</title>
+<link href="../css/style.css" type="text/css">
+</head>
+<body>
+	<form method="post" action="" >
+		<table>
+			<tr>
+				<th>부서이름</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>부서이름</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>부서이름</th>
+				<td></td>
+			</tr>
+		</table>
+		<button type="submit"></button>
+	</form>
+</body>
+</html>

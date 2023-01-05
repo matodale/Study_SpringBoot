@@ -1,0 +1,6 @@
+package egovframework.example.sample.service.impl;
+
+// 데이터베이스와 연결 => 
+public class DeptDAO {
+	
+}

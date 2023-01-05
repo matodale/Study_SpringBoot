@@ -1,0 +1,6 @@
+/* 전체 데이터베이스를 보여줍니다. */
+show databases;
+/*사용자 계정 및 권한 설정 입니다.*/
+grant select, insert, update, delete, create, drop, alter on springstudy.* to 'springid'@'localhost' identified by 'springstudy';
+
+create table 

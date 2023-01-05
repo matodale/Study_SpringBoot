@@ -1,0 +1,14 @@
+/* 전체 데이터베이스를 보여줍니다. */
+show databases;
+
+/*사용자 계정 및 권한 설정 입니다.*/
+grant select, insert, update, delete, create, drop, alter on springstudy.* to 'springid'@'localhost' identified by 'springstudy';
+
+create user springid@localhost identified by 'springstudy';
+grant all privileges on springstudy.* to springid@localhost;
+drop user 'springid'@'%';
+
+CREATE USER 'springid'@'localhost' IDENTIFIED BY 'springstudy';
+GRANT ALL PRIVILEGES ON *.* TO 'connectuser'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON connectdb.* to 'connectuser'@'%' WITH GRANT OPTION;
+flush privileges;

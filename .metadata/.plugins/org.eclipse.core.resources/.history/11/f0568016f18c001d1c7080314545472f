@@ -1,0 +1,15 @@
+package egovframework.example.sample.service.impl;
+
+import egovframework.example.sample.service.DeptService;
+import egovframework.example.sample.service.DeptVo;
+
+// 서비스와 연결 해주는 파일 interface 인 상속을 받아서 사용한다.
+public class DeptServiceImpl implements DeptService{
+	
+	@Override
+	public String InsertDept(DeptVo vo) throws Exception {
+		
+		return null;
+	}
+	
+}

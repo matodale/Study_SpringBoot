@@ -1,0 +1,11 @@
+package egovframework.example.sample.service.impl;
+
+import egovframework.example.sample.service.DeptVo;
+
+public class DeptDAO {
+	// 데이터베이스와 연결
+	public String InsertDept(DeptVo vo) {
+		return (String)Insert("deptDAO.InsertDept" , vo);
+	}
+	
+}

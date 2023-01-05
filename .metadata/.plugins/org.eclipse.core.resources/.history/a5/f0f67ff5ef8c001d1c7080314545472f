@@ -1,0 +1,5 @@
+package egovframework.example.sample.service;
+/* interface file 입니다.*/
+public interface DeptService {
+	
+}
