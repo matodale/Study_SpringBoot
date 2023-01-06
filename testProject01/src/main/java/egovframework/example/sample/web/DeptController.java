@@ -1,9 +1,9 @@
 package egovframework.example.sample.web;
+import java.util.List;
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import egovframework.example.sample.service.DeptService;
 import egovframework.example.sample.service.DeptVO;
 
@@ -43,10 +43,14 @@ public class DeptController {
 		return "";
 	}
 	
-	
-	
-	
-	
+	@RequestMapping(value = "/deptList.do")
+	public String selectDeptList(DeptVO vo, ModelMap model) throws Exception{
+		List<?> list = deptService.selectDeptList(vo);
+		System.out.println(list);
+		// ModelMap 매개변수로 하여 데이터값을 전달 (jsp에서의 속성, list)
+		model.addAttribute("resultList", list);
+		return "dept/deptList";
+	}
 	
 	
 }

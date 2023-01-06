@@ -11,10 +11,24 @@
 5. DeptController.java (파일에서 저장 서비스의 가동)
 6. sql-map-config.xml 파일에 Dept_SQL.xml 을 등록한다.
 
-### [목록화면] - deptList.do
+### [수정처리] - deptUpdate.do
+
+### [삭제처리] - deptDelete.do 
+
+## 등록 화면 작성하기
+### [등록화면] - deptWrite.do // 데이터 입력 하는 폼 작성
+
+## 추가 작성하기 리스트 작성하기
+### [목록화면] - deptList.do // 목록 화면을 갱신
 1. DeptService.java
 2. DeptServiceImpl.java
 3. DeptDAO.java
 4. Dept_SQL.xml
 5. DeptController.java
 6. deptList.jsp
+
+### [상세화면] - deptDetail.do 
+
+### [수정화면] - deptModify.do // 수정 화면을 갱신
+
+

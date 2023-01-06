@@ -27,5 +27,6 @@
 		<input type="submit" value="저장">
 		<input type="reset" value="다시작성">
 	</form>
+	<a href="http://localhost:8080/testProject01/deptList.do">부서목록</a>
 </body>
 </html>

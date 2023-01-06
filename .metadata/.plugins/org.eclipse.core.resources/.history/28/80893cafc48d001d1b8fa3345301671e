@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사원목록</title>
+<link href="../css/style.css" type="text/css">
+</head>
+<body>
+	<table>
+		<caption>사원목록</caption>
+		<tr>
+			<th>부서목록</th>
+			<th>부서이름</th>
+			<th>부서위치</th>
+		</tr>
+		<tr>
+			<td>부서목록</td>
+			<td>부서이름</td>
+			<td>부서위치</td>
+		</tr>
+	</table>
+</body>
+</html>

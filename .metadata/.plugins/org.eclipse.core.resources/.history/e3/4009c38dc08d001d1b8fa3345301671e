@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DeptSpace">
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="deptVO" type="egovframework.example.sample.service.DeptVO"/>
+	<!-- SQL 반드시 확인 -->
+	<insert id="deptDAO.InsertDept">
+		insert into dept(deptno,dname,loc) values(#deptno#, #dname#, #loc#)
+	</insert>
+	<select id="deptDAO.selectDeptList" resultMap="egovMap">
+		select deptno,dname,loc from dept
+	</select>
+</sqlMap>
