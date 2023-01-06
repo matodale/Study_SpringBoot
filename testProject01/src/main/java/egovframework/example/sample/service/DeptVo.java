@@ -1,11 +1,12 @@
 package egovframework.example.sample.service;
 
-public class DeptVo {
+public class DeptVO {
 	// 객체를 캡슐화 세팅
 	// 부서번호, 부서이름, 부서위치 작성
 	private String deptno;
 	private String dname;
-	private String Loc;
+	private String loc;
+	
 	// get , set 메소드 작성
 	public String getDeptno() {
 		return deptno;
@@ -20,11 +21,12 @@ public class DeptVo {
 		this.dname = dname;
 	}
 	public String getLoc() {
-		return Loc;
+		return loc;
 	}
 	public void setLoc(String loc) {
-		Loc = loc;
+		this.loc = loc;
 	}
+	
 	
 	
 }

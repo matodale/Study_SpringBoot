@@ -17,15 +17,15 @@
         <property name="username" value="sa"/>
     </bean>
     -->  
-    
+    <!-- 신버전에 맞게 다시 설정한 코드 -->
     <!-- Mysql (POM에서 commons-dbcp, mysql-connector-java 관련 라이브러리 설정 ) -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/springstudy" />
         <property name="username" value="springid"/>
         <property name="password" value="springstudy"/>
     </bean>
-    
+    <!-- 해당 DB 연결은 성공하였다. -->
     
     <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정)
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
