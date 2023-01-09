@@ -1,7 +1,0 @@
-package egovframework.example.sample.service.impl;
-
-
-public class DeptDAO {
-	// 데이터베이스와 연결
-	
-}

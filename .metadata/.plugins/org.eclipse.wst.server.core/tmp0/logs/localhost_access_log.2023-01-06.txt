@@ -79,3 +79,8 @@
 0:0:0:0:0:0:0:1 - - [06/Jan/2023:22:57:36 +0900] "POST /testProject01/deptWriteSave.do HTTP/1.1" 404 1042
 0:0:0:0:0:0:0:1 - - [06/Jan/2023:22:57:36 +0900] "GET /testProject01/images/egovframework/example/error_bg.jpg HTTP/1.1" 404 1042
 0:0:0:0:0:0:0:1 - - [06/Jan/2023:22:57:43 +0900] "GET /testProject01/deptList.do HTTP/1.1" 200 668
+0:0:0:0:0:0:0:1 - - [06/Jan/2023:23:06:46 +0900] "GET /testProject01/deptWrite.do HTTP/1.1" 200 758
+0:0:0:0:0:0:0:1 - - [06/Jan/2023:23:07:25 +0900] "POST /testProject01/deptWriteSave.do HTTP/1.1" 404 1042
+0:0:0:0:0:0:0:1 - - [06/Jan/2023:23:07:25 +0900] "GET /testProject01/css/egovframework/sample.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Jan/2023:23:07:25 +0900] "GET /testProject01/images/egovframework/example/error_bg.jpg HTTP/1.1" 404 1042
+0:0:0:0:0:0:0:1 - - [06/Jan/2023:23:07:28 +0900] "GET /testProject01/deptList.do HTTP/1.1" 200 757

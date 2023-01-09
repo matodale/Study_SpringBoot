@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>부서관리 테스트 및 데이터 전달 테스트</title>
-<link href="../css/style.css" type="text/css">
+<link type="text/css" rel="stylesheet" href="<c:url value='/css/style.css'/>"/>
 </head>
 <body>
 	<!-- 전송할 곳을 작성하는 폼 -->
@@ -27,6 +27,6 @@
 		<input type="submit" value="저장">
 		<input type="reset" value="다시작성">
 	</form>
-	<a href="http://localhost:8080/testProject01/deptList.do">부서목록</a>
+	<a href="deptList.do">부서목록</a>
 </body>
 </html>

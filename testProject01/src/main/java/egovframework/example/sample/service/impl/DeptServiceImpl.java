@@ -13,23 +13,46 @@ import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 	// interface 와 상속 되어 있다.
 @Service("deptService")
 public class DeptServiceImpl extends EgovAbstractServiceImpl implements DeptService{
-	
-	// Resource
-	@Resource(name = "deptDAO")
+	@Resource(name = "deptDAO") // Resource
 	private DeptDAO deptDAO;
-	
-	// Method create : 데이터 입력하는 기능
-	@Override
+	@Override // Method create : 데이터 입력하는 기능
 	public String InsertDept(DeptVO vo) throws Exception {
 		return deptDAO.InsertDept(vo); // 저장하는 데이터가 입력 된다.
 	}
-	
-	// 데이터 갱신 하는 메소드
-	@Override
+	@Override // 데이터 갱신 하는 메소드
 	public List<?> selectDeptList(DeptVO vo) throws Exception {
 		return deptDAO.selectDeptList(vo); // DB를 불러오는 역할
 	}
-	
-	
+	@Override // deptno , dname , loc 변수 3개를 모두 가져오는 객체 DeptVO를 타입으로 지정.
+	public DeptVO selectDeptDetail(int deptno) throws Exception {
+		return deptDAO.selectDeptDetail(deptno);
+	}
+	@Override
+	public int delectDept(int deptno) throws Exception {
+		return deptDAO.deleteDept(deptno);
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
