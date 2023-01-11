@@ -31,5 +31,16 @@ public interface DeptService {
 	 * 6. deptDetail.jsp
 	 * */
 	public int delectDept(int deptno) throws Exception;
+	/*
+	 * [ 업데이트 기능 ] - updateDept.do
+	 * 1. DeptService.java
+	 * 2. DeptServiceImpl.java
+	 * 3. DeptDAO.java
+	 * 4. Dept_SQL.xml
+	 * 5. DeptController.java
+	 * 6. deptModifyWrite.jsp
+	 * */
+	// DeptVO 변수들 모두 가져와 수정해야 하므로 변수들 모두 매개변수로 지정.
+	public int updateDept(DeptVO vo) throws Exception;
 }
 

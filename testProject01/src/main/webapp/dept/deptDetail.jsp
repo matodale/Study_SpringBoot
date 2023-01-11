@@ -28,7 +28,9 @@
 		</tr>
 		<tr>
 			<th colspan="2">
-				<button type="button">수정</button>
+				<!-- 수정버튼 -->
+				<button type="button" onclick="location.href='deptModifyWrite.do?deptno=${deptVO.deptno}'">수정</button>
+				<!-- 삭제버튼 -->
 				<button type="button"  onclick="location.href='deptDelete.do?deptno=${deptVO.deptno}'">삭제</button>
 			</th>
 		</tr>

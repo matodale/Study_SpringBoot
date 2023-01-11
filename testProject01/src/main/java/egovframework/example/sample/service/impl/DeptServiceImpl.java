@@ -17,7 +17,8 @@ public class DeptServiceImpl extends EgovAbstractServiceImpl implements DeptServ
 	private DeptDAO deptDAO;
 	@Override // Method create : 데이터 입력하는 기능
 	public String InsertDept(DeptVO vo) throws Exception {
-		return deptDAO.InsertDept(vo); // 저장하는 데이터가 입력 된다.
+		// 저장하는 데이터가 입력 된다. 입력에 이상이 없으면 1 = 성공을 출력한다.
+		return deptDAO.InsertDept(vo); 
 	}
 	@Override // 데이터 갱신 하는 메소드
 	public List<?> selectDeptList(DeptVO vo) throws Exception {
@@ -29,7 +30,13 @@ public class DeptServiceImpl extends EgovAbstractServiceImpl implements DeptServ
 	}
 	@Override
 	public int delectDept(int deptno) throws Exception {
+		// 삭제 성공시 1을 출력. 실패시 0을 출력
 		return deptDAO.deleteDept(deptno);
+	}
+	@Override
+	public int updateDept(DeptVO vo) throws Exception {
+		// 업데이트 성공시 1을 출력함.
+		return deptDAO.updateDept(vo);
 	}
 	
 }

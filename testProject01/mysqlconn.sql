@@ -27,3 +27,42 @@ create table member(
 	name varchar(10) not null,
 	reg_date datetime not null
 );
+
+create table codes(
+	code int not null primary key auto_increment, /* 중복 불가로 지정함.*/
+	gid int not null,
+	name varchar(100) not null
+);
+desc codes;
+select * from codes;
+insert into codes(gid, name) values(2, '디자이너');
+/*
+ * 1, 1, 개발자
+ * 2, 1, 디자이너
+ * 3, 2, 축구
+ * 4, 2, 농구
+ * 5, 2, 야구
+ * 
+ * */
+
+
+/*
+	오라클에서의 추가 SQL문 
+		시퀀스
+		create sequence codes_seq increment by 1 start with 1 maxvalue 9999; 
+		
+	insert into codes(code,gid,name) values(codes_seq.nextval,#gid#,#name#)
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+

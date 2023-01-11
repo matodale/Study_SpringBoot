@@ -13,9 +13,13 @@
 	</select>
 	<select id="deptDAO.selectDeptDetail" resultClass="deptVO"> <!-- deptno을 이용하여 출력하기 -->
 	<!-- 하나의 행이 출력이 되는데 alias="deptVO"와 연결되어 있으므로 resultMap으로 연결 -->
+	<!-- 수정하기와 같은 SQL문을 활용해야 하므로 같은 키 값을 쓴다. -->
 		select deptno, dname, loc from dept where deptno=#deptno#
 	</select>
 	<delete id="deptDAO.deleteDept"> <!-- 실행만 하고 끝나므로 resultClass 는 필요가 없다 -->
 		delete from dept where deptno=#deptno#
 	</delete>
+	<update id="deptDAO.updateDept">
+		update dept set dname=#dname#, loc=#loc# where deptno=#deptno#
+	</update>
 </sqlMap>

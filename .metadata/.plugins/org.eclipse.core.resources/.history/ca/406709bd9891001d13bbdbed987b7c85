@@ -1,0 +1,10 @@
+package egovframework.example.sample.service;
+
+public class CodeVO {
+	private int code;
+	private int gid;
+	private String name;
+	
+	
+	
+}

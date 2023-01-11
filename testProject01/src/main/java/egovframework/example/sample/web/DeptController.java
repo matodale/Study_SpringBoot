@@ -50,6 +50,7 @@ public class DeptController {
 		model.addAttribute("deptVO", vo);
 		return "dept/deptDetail";
 	}
+	// 삭제 기능 화면
 	@RequestMapping(value="/deptDelete.do")
 	public String deleteDept(int deptno) throws Exception{
 		int result = deptService.delectDept(deptno);
@@ -57,6 +58,29 @@ public class DeptController {
 			System.out.println("삭제가 완료되었습니다.");
 		}else {
 			System.out.println("데이터가 없거나 삭제가 실패하였습니다.");
+		}
+		return "";
+	}
+	// 데이터 수정 화면 맵핑
+	@RequestMapping(value="/deptModifyWrite.do")
+	public String selectDeptModify(int deptno, ModelMap model) throws Exception{
+		// 부서번호인 deptno를 이용해 데이터를 가져와야 한다.
+		// 데이터 클래스 DeptVO의 변수 클래스를 vo변수로 선언함.
+		DeptVO vo = deptService.selectDeptDetail(deptno);
+		// 화면으로 출력을 위해 속성 배열 클래스인 ModelMap의 addAttribute()메소드를 이용한다.
+		// jsp파일에서 사용할 변수 vo값으로 지정
+		model.addAttribute("vo", vo);
+		return "dept/deptModifyWrite";
+	}
+	@RequestMapping(value="/deptModifySave.do")
+	public String updateDept(DeptVO vo) throws Exception{
+		// 업데이트 서비스 기능인 updateDept sql문을 이용한 기능을 가진 클래스를 작성하자.
+		// 서비스 작성 후 기능 작성후 완료
+		int result = deptService.updateDept(vo);
+		if(result == 1) {
+			System.out.println("수정완료.");
+		}else {
+			System.out.println("수정실패.");
 		}
 		return "";
 	}

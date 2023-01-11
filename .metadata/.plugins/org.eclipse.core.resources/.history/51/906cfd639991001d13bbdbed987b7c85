@@ -1,0 +1,8 @@
+package egovframework.example.sample.web;
+
+import org.springframework.stereotype.Controller;
+
+@Controller // 스프링 구조에서의 컨트롤러 어노테이션
+public class CodeController {
+	
+}

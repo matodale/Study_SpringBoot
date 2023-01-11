@@ -1,6 +1,0 @@
-package egovframework.example.sample.service;
-
-/* interface file */
-public class DeptService {
-	
-}

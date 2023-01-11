@@ -1,0 +1,12 @@
+package egovframework.example.sample.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller // 스프링 구조에서의 컨트롤러 어노테이션
+public class CodeController {
+	@RequestMapping(value="/codeWrite.do")
+	public String codeWrite(){
+		return "";
+	}
+}

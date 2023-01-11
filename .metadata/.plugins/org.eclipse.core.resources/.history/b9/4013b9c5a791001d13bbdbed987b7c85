@@ -1,0 +1,14 @@
+package egovframework.example.sample.service.impl;
+
+import egovframework.example.sample.service.CodeService;
+import egovframework.example.sample.service.CodeVO;
+
+public class CodeServiceImpl implements CodeService {
+	
+	@Override
+	public String insertCodes(CodeVO vo) throws Exception {
+		
+		return null;
+	}
+
+}

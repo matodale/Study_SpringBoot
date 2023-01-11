@@ -9,10 +9,21 @@ table{
 	width:400px;
 	border-collapse:collapse; /* 셀 간격 없어지게 한다 */
 }
+
 a{
 	text-decoration:none;
 }
+
 th, td{
 	border:1px solid #cccccc;
 	padding:5px;
+}
+
+.codeWrite_wrap{
+	width:100%;
+}
+.codeWrite_wrap .codeWrite_form{
+	width:400px;
+	margin:0 auto;
+	padding-top:10vh;
 }
