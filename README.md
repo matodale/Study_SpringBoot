@@ -1,6 +1,8 @@
 # 전자정보프레임워크 스터디 내용 입니다. 
 ## Spring boot
-### 2023년 01월 05일 첫업로드 전자정보프레임워크 설치, 설정, mysql 연결, 기본 MVC 모델 구조 파악하기 샘플을 활용하여 배우기
+1. 개발 환경 : eGovFrame 3.10.0 , Mysql 8.0, Mysql-connector v8.0.31 , Apache Tomcat v8.5
+2. 개발 기능 : Dept 부서 테이블 관리, code 테이블 관리
+### 2023년 01월 05일 첫업로드 전자정보프레임워크 설치, 설정, mysql 연결, <br>기본 MVC 모델 구조 파악하기 샘플을 활용하여 배우기
 
 ## 2023년 01월 06일 DB 연결 후 Mysql DB에 저장 완료
 ### [저장처리] - deptwriteSave.do
@@ -30,5 +32,6 @@
 ### [상세화면] - deptDetail.do 
 
 ### [수정화면] - deptModify.do // 수정 화면을 갱신
+
 
 
