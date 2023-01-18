@@ -1,5 +1,0 @@
-package egovframework.example.sample.service.impl;
-
-public class CodeServiceImpl implements CodeService{
-	// CodeService 을 상속 받아야 한다.
-}

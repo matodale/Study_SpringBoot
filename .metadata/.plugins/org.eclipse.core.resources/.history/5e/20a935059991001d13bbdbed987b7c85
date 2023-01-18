@@ -1,5 +1,0 @@
-package egovframework.example.sample.web;
-@Controller
-public class CodeController {
-	
-}

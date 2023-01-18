@@ -5,6 +5,18 @@
 	<typeAlias  alias="codeVO" type="egovframework.example.sample.service.CodeVO"/>
 	
 	<insert id="codeDAO.insertCodes">
-		insert into codes(gid, name) values(#gid#, #name#)
+		INSERT INTO codes(gid, name) 
+			VALUES(#gid#, #name#)
 	</insert>
+	<select id="codeDAO.selectCodesList" resultClass="egovMap">
+		SELECT code, 
+				gid, 
+					CASE gid 
+					WHEN 1 THEN 'JOB(업무)'
+					WHEN 2 THEN 'HOBBY(취미)' 
+					END as "gidname",
+				name
+		FROM codes 
+		ORDER BY gid ASC
+	</select>	
 </sqlMap>

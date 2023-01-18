@@ -1,7 +1,0 @@
-package egovframework.example.sample.service;
-
-public interface CodeService {
-	// 코드 입력 인터페이스
-	public String insertCodes(CodeVO vo) throws Exception;
-	// 코드 리스트 인터페이스
-}

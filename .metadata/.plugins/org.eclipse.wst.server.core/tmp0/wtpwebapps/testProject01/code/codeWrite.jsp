@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><%--  jstl 사용 --%>
+<%--  jstl 사용 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -23,6 +24,7 @@
 </script>
 </head>
 <body>
+	<!-- 화면 jsp 파일  -->
 	<div class="codeWrite_wrap">
 		<!-- 데이터 입력하는 Form -->
 		<div class="codeWrite_form">
@@ -43,9 +45,10 @@
 					</tr>
 					<tr>
 						<th colspan="2">
+						<!-- 버튼 에서의 자바스크립트 -->
 							<button type="submit" onclick="fn_submit(); return false;">저장</button>
 							<button type="reset">다시작성</button>
-							<button type="button" onclick="location.href='#'">코드목록보기</button>
+							<button type="button" onclick="location.href='codeList.do'">코드목록보기</button>
 						</th>
 					</tr>
 				</table>

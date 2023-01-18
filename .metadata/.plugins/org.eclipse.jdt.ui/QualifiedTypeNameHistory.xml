@@ -3,8 +3,6 @@
 <fullyQualifiedTypeName name="egovframework.example.sample.service.DeptVo"/>
 <fullyQualifiedTypeName name="egovframework.rte.psl.dataaccess.EgovAbstractDAO"/>
 <fullyQualifiedTypeName name="egovframework.example.sample.service.DeptService"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
@@ -12,4 +10,6 @@
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="egovframework.example.sample.service.CodeService"/>
 <fullyQualifiedTypeName name="egovframework.example.sample.service.CodeVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
 </qualifiedTypeNameHistroy>

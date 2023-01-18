@@ -1,0 +1,10 @@
+127.0.0.1 - - [15/Jan/2023:21:33:16 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [15/Jan/2023:23:10:29 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:11 +0900] "GET /testProject01/codeWriteSave.do HTTP/1.1" 200 403
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:11 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:16 +0900] "GET /testProject01/codeWrite.do HTTP/1.1" 200 1456
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:16 +0900] "GET /testProject01/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:34 +0900] "POST /testProject01/codeWriteSave.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:34 +0900] "GET /testProject01/codeList.do HTTP/1.1" 404 1042
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:34 +0900] "GET /testProject01/css/egovframework/sample.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [15/Jan/2023:23:11:34 +0900] "GET /testProject01/images/egovframework/example/error_bg.jpg HTTP/1.1" 404 1042

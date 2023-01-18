@@ -28,41 +28,72 @@ create table member(
 	reg_date datetime not null
 );
 
-create table codes(
-	code int not null primary key auto_increment, /* 중복 불가로 지정함.*/
-	gid int not null,
-	name varchar(100) not null
-);
-desc codes;
-select * from codes;
-insert into codes(gid, name) values(2, '디자이너');
+
 /*
  * 1, 1, 개발자
  * 2, 1, 디자이너
  * 3, 2, 축구
  * 4, 2, 농구
  * 5, 2, 야구
- * 
- * */
-
-
-/*
+ 
 	오라클에서의 추가 SQL문 
 		시퀀스
-		create sequence codes_seq increment by 1 start with 1 maxvalue 9999; 
-		
+		create table codes(
+			code number not null primary key,
+			gid number not null,
+			name varchar2(100) not null
+		);
+	
+	/* oracle 에서 auto_increate 기능 */	
+	create sequence codes_seq increment by 1 start with 1 maxvalue 9999;
 	insert into codes(code,gid,name) values(codes_seq.nextval,#gid#,#name#)
+	
+	[파일 목록]
+	CodeVO.java
+	CodeController.java
+	CodeService.java
+	CodeServiceImpl.java
+	CodeDAO.java
+	Code_SQL.xml
+	
+	codeWrite.jsp
+	codeList.jsp
+	codeModifyWrite.jsp
+	
+	[프로그램 목록]
+	codeWrite.do - 갱신화면
+	codeWriteSave.do - 저장기능
+	codeList.do  - 갱신기능
+	codeModifyWrite.do - 수정하기화면
+	codeModifySave.do - 수정기능
+	codeDelete.do - 삭제기능
+	
 */
 
+create table codes(
+	code int not null primary key auto_increment, /* 중복 불가로 지정함. */
+	gid int not null,
+	name varchar(100) not null
+);
 
+desc codes;
+select * from codes; /* 데이터 갱신 */
+insert into codes(code, gid, name) values(4, 2, '프론트엔드'); /* 데이터 입력 */
+update codes set name ='그림그리기' where code = 4; /* 데이터 수정 */
+delete from codes where code = 4; /* 데이터 삭제 */
+SELECT code, gid, name FROM codes ORDER BY gid ASC;
 
+/* mysql에서 sql 작성 시 */
+SELECT code, 
+		gid, 
+		CASE gid 
+		WHEN 1 THEN 'JOB(업무)'
+		WHEN 2 THEN 'HOBBY(취미)' 
+		END as "gidname",
+		name
+FROM codes ORDER BY gid ASC;
 
-
-
-
-
-
-
-
+/* oracle에서 sql 작성 시  */
+/* SELECT code, decode(gid, '1', 'JOB', '2' ,'HOBBY') gid, name FROM codes ORDER BY gid ASC; */
 
 
