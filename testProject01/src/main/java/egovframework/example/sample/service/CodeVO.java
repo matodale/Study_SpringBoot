@@ -1,7 +1,6 @@
 package egovframework.example.sample.service;
-
+//1. CodeVO 작성
 public class CodeVO {
-	// 1. CodeVO 작성
 	private int code;
 	// integer type code : 순서대로 저장하는 번호
 	private int gid;

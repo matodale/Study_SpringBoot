@@ -30,11 +30,13 @@
 		<div class="codeWrite_form">
 			<form class="codeWrite" name="frm" method="post" action="codeWriteSave.do">
 				<table>
-					<caption>코드관리입력</caption>
+					<caption>
+						<strong>코드관리입력</strong>
+					</caption>
 					<tr>
 						<th>분류</th>
 						<td><select name="gid">
-								<option value="1">JOB(업무)</option>
+								<option value="1" selected>JOB(업무)</option>
 								<option value="2">HOBBY(취미)</option>
 						</select></td>
 					</tr>

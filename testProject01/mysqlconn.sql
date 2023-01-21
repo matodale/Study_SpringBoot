@@ -92,8 +92,9 @@ SELECT code,
 		END as "gidname",
 		name
 FROM codes ORDER BY gid ASC;
-
+select count(*) from codes;
 /* oracle에서 sql 작성 시  */
 /* SELECT code, decode(gid, '1', 'JOB', '2' ,'HOBBY') gid, name FROM codes ORDER BY gid ASC; */
 
+select code, gid, name from codes where code='5';
 

@@ -6,7 +6,7 @@
 }
 
 table{
-	width:400px;
+	width:800px;
 	border-collapse:collapse; /* 셀 간격 없어지게 한다 */
 }
 
@@ -18,12 +18,17 @@ th, td{
 	border:1px solid #cccccc;
 	padding:5px;
 }
-
 .codeWrite_wrap{
 	width:100%;
 }
 .codeWrite_wrap .codeWrite_form{
-	width:400px;
+	width:800px;
 	margin:0 auto;
 	padding-top:10vh;
+}
+.codeWrite_wrap .codeWrite_form table .cap2{
+	text-align:left;
+}
+.codeWrite_wrap .codeWrite_form table .cap2 button{
+	margin-left:10px;
 }

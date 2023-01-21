@@ -3,7 +3,7 @@
 <sqlMap namespace="CodeSpace">
 	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
 	<typeAlias  alias="codeVO" type="egovframework.example.sample.service.CodeVO"/>
-	
+	<!-- 삽입 기능 -->
 	<insert id="codeDAO.insertCodes">
 		INSERT INTO codes(gid, name) 
 			VALUES(#gid#, #name#)
@@ -17,6 +17,29 @@
 					END as "gidname",
 				name
 		FROM codes 
-		ORDER BY gid ASC
+			ORDER BY gid ASC
+	</select>
+	<!-- integer 값으로 resultClass 는 java.lang.Integer로 데이터를 보낼 수 있게 지정해준다. -->
+	<select id="codeDAO.selectCodesCount" resultClass="java.lang.Integer">
+		SELECT count(*) cnt 
+		FROM codes
+	</select>
+	<delete id="codeDAO.deleteCodes">
+		DELETE 
+		FROM codes 
+			WHERE code = #code#
+	</delete>
+	<select id="codeDAO.selectCodesDetail" resultClass="codeVO">
+		SELECT code,
+				gid,
+				name
+		FROM codes
+			WHERE code = #code#
 	</select>	
+	<update id="codeDAO.updateCodes">
+		UPDATE codes
+		SET gid = #gid#,
+		    name = #name#
+			WHERE code = #code# 
+	</update>
 </sqlMap>
