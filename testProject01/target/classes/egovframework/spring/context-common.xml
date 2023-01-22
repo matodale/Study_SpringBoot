@@ -3,11 +3,11 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-
-    <context:component-scan base-package="egovframework, main">
+	<!-- 자바 패키지 추가로 등록 시 추가할 사항입니다. -->
+    <context:component-scan base-package="egovframework, main"><!-- main 컨트롤러 어노테이션 지정후 추가 -->
        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
-
+	
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<list>

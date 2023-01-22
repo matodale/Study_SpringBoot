@@ -97,4 +97,33 @@ select count(*) from codes;
 /* SELECT code, decode(gid, '1', 'JOB', '2' ,'HOBBY') gid, name FROM codes ORDER BY gid ASC; */
 
 select code, gid, name from codes where code='5';
-
+drop table NBoard;
+/* 게시판 테이블 작성 */
+create table nboard(
+	unq int not null primary key auto_increment, /* 중복 불가로 지정함 */
+	title varchar(100) not null,
+	pass varchar(20) not null,
+	name varchar(10) not null,
+	content varchar(1000) not null,
+	hits int default 0, /* 초기 값은 0 */
+	rdate datetime not null default CURRENT_TIMESTAMP() /* java 에서 Timestamp 와 연동하여 쓸 예정 */
+);
+/* 오라클 에서의 세
+create table nboard(
+	unq number not null primary key, /* 중복 불가로 지정함 */
+	title varchar2(100) not null,
+	pass varchar2(20) not null,
+	name varchar2(10) not null,
+	content varchar2(1000) not null,
+	hits number default 0, /* 초기 값은 0 */
+	rdate timestamp(6) not null /* java 에서 Timestamp 와 연동하여 쓸 예정 */
+);
+	/* oracle 에서 auto_increate 기능 */	
+	create sequence nboard_seq increment by 1 start with 1 maxvalue 9999;
+	insert into nboard(unq, title, pass, name, content, hits, rdate) values(nboard_seq.nextval,#title#,#pass#, #name#, #content#, 0, sysdate)
+*/
+ALTER TABLE nboard MODIFY COLUMN hits int not null default 0;
+desc nboard;
+select * from nboard;
+insert into nboard(title, pass, name, content, rdate) values('엄청난 일이 일어났습니다.', '123', '관리자', '2023년 01월 22일은 설날입니다.', CURRENT_TIMESTAMP());
+delete from nboard where unq = 1;

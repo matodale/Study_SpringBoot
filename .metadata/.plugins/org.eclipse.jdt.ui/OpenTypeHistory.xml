@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=testProject01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;egovframework.example.sample.service{CodeService.java[CodeService" modifiers="513" timestamp="1674294999000"/>
+<typeInfo handle="=testProject01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;main.service{BoardService.java[BoardService" modifiers="513" timestamp="1674388400000"/>
+<typeInfo handle="=testProject01/\/Users\/parkchoelho\/.m2\/repository\/egovframework\/rte\/egovframework.rte.fdl.idgnr\/3.10.0\/egovframework.rte.fdl.idgnr-3.10.0.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/org.eclipse.jst.component.archivename=/egovframework.rte.fdl.idgnr-3.10.0.jar=/=/maven.groupId=/egovframework.rte=/=/maven.artifactId=/egovframework.rte.fdl.idgnr=/=/maven.version=/3.10.0=/=/maven.scope=/compile=/&lt;egovframework.rte.fdl.idgnr(EgovIdGnrService.class[EgovIdGnrService" modifiers="1537" timestamp="1672803757000"/>
 </typeInfoHistroy>

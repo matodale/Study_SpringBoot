@@ -33,5 +33,30 @@
 
 ### [수정화면] - deptModify.do // 수정 화면을 갱신
 
+## 일반게시판 만들기
+### 구조
+1. main.web
+    - BoardController.java
+2. main.service
+    - BoardService.java
+    - BoardVO.java
+3. main.service.impl
+    - BoardServiceImpl.java
+    - BoardDAO.java
+4. Board_SQL.xml
+5. board / boardWrite.jsp
+           boardList.jsp
+           passWrite.jsp
+           boardDetail.jsp
+           boardModify.jsp
+### 프로그램 목록
+1. boardWrite.do
+2. boardWriteSave.do
+3. boardList.do
+4. boardModifyWrite.do
+5. boardModifySave.do
+6. boardDelete.do
+7. passWrite.do
+
 
 

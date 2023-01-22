@@ -4,4 +4,5 @@
 	<sqlMap resource="egovframework/sqlmap/example/sample/EgovSample_Sample_SQL.xml"/>
 	<sqlMap resource="egovframework/sqlmap/example/sample/Dept_SQL.xml"/> <!-- sql문을 작성한 경로 그대로 써준다. -->
 	<sqlMap resource="egovframework/sqlmap/codeSQL/Code_SQL.xml"/> <!-- sql문을 작성한 경로 반드시 설정한다. -->
+	<sqlMap resource="egovframework/sqlmap/boardSQL/Board_SQL.xml"/> <!-- sql문을 작성한 경로 반드시 설정한다. -->
 </sqlMapConfig>
