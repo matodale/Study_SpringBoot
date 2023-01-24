@@ -127,3 +127,49 @@ desc nboard;
 select * from nboard;
 insert into nboard(title, pass, name, content, rdate) values('엄청난 일이 일어났습니다.', '123', '관리자', '2023년 01월 22일은 설날입니다.', CURRENT_TIMESTAMP());
 delete from nboard where unq = 1;
+SELECT unq, title, name, content, hits, DATE_FORMAT(rdate, '%Y-%m-%d') as rdate FROM nboard ORDER BY unq DESC;
+/* oracle 에서는 to_char() 함수로 적는다. to_char(rdate, 'yyyy-mm-dd') */
+
+/* 패이징 처리에 필요한 SQL문 */
+SELECT b.* FROM (
+		SELECT row_number() over (ORDER BY unq DESC) AS rn, a.* FROM (
+		SELECT unq, 
+			 title, 
+			  name, 
+		   content, 
+		      hits, 
+		      DATE_FORMAT(rdate, '%Y-%m-%d') AS rdate 
+		FROM nboard ORDER BY unq DESC) AS a ) AS b
+		WHERE (rn >= 1) AND (rn <= 10);
+/*
+oracle 에서의 페이징 rownum() 적용
+SELECT b.* FROM (
+		SELECT rownum() AS rn, a.* FROM (
+		SELECT unq, 
+			 title, 
+			  name, 
+		   content, 
+		      hits, 
+		      TO_CHAR(rdate, 'yyyy-mm-dd') AS rdate 
+		FROM nboard 
+		ORDER BY unq DESC) AS a ) AS b
+		WHERE (rn >= 1) AND (rn <= 10);
+*/
+SELECT COUNT(*) as total FROM nboard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

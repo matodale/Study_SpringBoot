@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="form_cotainer">
+		<div class="form_container">
 			<form id="frm">
 				<table>
 					<caption>
@@ -51,10 +51,11 @@
 						</td>
 					</tr>
 					<tr>
-						<th colspan="2">
+						<td colspan="2" align="right">
 							<button type="submit" onclick="fn_submit(); return false;">저장</button>
-							<button type="reset">취소</button>
-						</th>
+							<button type="reset">재작성</button>
+							<button type="button" onclick="location.href='boardList.do'">뒤로</button>
+						</td>
 					</tr>
 				</table>
 			</form>

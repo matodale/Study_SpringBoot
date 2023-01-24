@@ -17,14 +17,32 @@
 					CURRENT_TIMESTAMP)
 	</insert>
 	<!-- List / HashMap -->
+	<!-- 
+	문법에 어긋나는 SQL문인데 적용하려면 <![CDATA[  ]]> 을 사용한다.
+	현재는 MYSQL을 쓰고 있으므로 row_number() over ()
+	-->
 	<select id="boardDAO.selectNBoardList" resultClass="egovMap">
-		SELECT unq,
-		      title,
-		      name,
-		      content,
-		      hits,
-		      rdate
-		FROM nboard
-		ORDER BY unq DESC
+		<![CDATA[
+			SELECT b.* FROM (
+			SELECT row_number() over (
+			ORDER BY unq DESC) AS rn, a.* FROM (
+			SELECT 
+				unq, 
+			 	title, 
+			  	name, 
+		   		content, 
+		      	hits, 
+		      	DATE_FORMAT(rdate, '%Y-%m-%d') AS rdate 
+			FROM nboard 
+			ORDER BY unq DESC) 
+			AS a ) 
+			AS b
+			WHERE rn >= #startIndex# AND rn <= #endIndex#
+		]]>
+	</select>
+	
+	<select id="boardDAO.selectNBoardTotal" resultClass="java.lang.Integer">
+		SELECT COUNT(*) as total 
+		FROM nboard 
 	</select>
 </sqlMap>

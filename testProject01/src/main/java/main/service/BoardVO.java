@@ -12,6 +12,12 @@ public class BoardVO {
 	public int hits; // 조회수
 	public Timestamp rdate; // 쓴 날짜와 시간
 	
+	// 추가할 내용 페이징 처리할 변수들
+	// 초기값을 설정
+	private int viewPage = 1;
+	private int startIndex = 1;
+	private int endIndex = 10;
+	
 	public int getUnq() {
 		return unq;
 	}
@@ -54,6 +60,22 @@ public class BoardVO {
 	public void setRdate(Timestamp rdate) {
 		this.rdate = rdate;
 	}
-	
-	
+	public int getViewPage() {
+		return viewPage;
+	}
+	public void setViewPage(int viewPage) {
+		this.viewPage = viewPage;
+	}
+	public int getStartIndex() {
+		return startIndex;
+	}
+	public void setStartIndex(int startIndex) {
+		this.startIndex = startIndex;
+	}
+	public int getEndIndex() {
+		return endIndex;
+	}
+	public void setEndIndex(int endIndex) {
+		this.endIndex = endIndex;
+	}
 }
