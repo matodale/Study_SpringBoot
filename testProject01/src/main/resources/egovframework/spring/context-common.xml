@@ -7,7 +7,7 @@
     <context:component-scan base-package="egovframework, main"><!-- main 컨트롤러 어노테이션 지정후 추가 -->
        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
-	
+	<!-- context-common.xml 변경 -->
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<list>

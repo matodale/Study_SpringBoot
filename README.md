@@ -5,6 +5,7 @@
 ### 2023년 01월 05일 첫업로드 전자정보프레임워크 설치, 설정, mysql 연결, <br>기본 MVC 모델 구조 파악하기 샘플을 활용하여 배우기
 
 ## 2023년 01월 06일 DB 연결 후 Mysql DB에 저장 완료
+## 1. 기본 등록용 부서 테이플 활용 및 기본 Spring 
 ### [저장처리] - deptwriteSave.do
 1. DeptService.java (인터페이스 명세 역할)(명세 역할) - 메소드들의 정의
 2. DeptServiceImpl.java (메소드 구현 역할) - 프로그램 작업
@@ -33,7 +34,7 @@
 
 ### [수정화면] - deptModify.do // 수정 화면을 갱신
 
-## 일반게시판 만들기
+## 2. 일반게시판 만들기
 ### 구조
 1. main.web
     - BoardController.java
