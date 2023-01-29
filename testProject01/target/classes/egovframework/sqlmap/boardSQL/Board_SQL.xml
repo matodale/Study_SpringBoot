@@ -84,4 +84,8 @@
 		FROM nboard
 		WHERE unq=#unq# AND pass=#pass#
 	</select>
+	<delete id="boardDAO.deleteNBoard">
+		DELETE FROM nboard
+		WHERE unq = #unq# AND pass = #pass#
+	</delete>
 </sqlMap>

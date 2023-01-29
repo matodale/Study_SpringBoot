@@ -111,4 +111,28 @@ public class BoardController {
 		}
 		return result+""; // return 값을 ajax에서 설정한 ok를 리턴한다.
 	}
+	
+	@RequestMapping("/passWrite.do")
+	public String passWrite(int unq, ModelMap model) {
+		// 데이터베이스 작업은 없다. 대신 화면으로 전송하는것은 있다.
+		model.addAttribute("unq", unq);
+		return "board/passWrite";
+	}
+	
+	@RequestMapping("/boardDelete.do")
+	@ResponseBody
+	public String deleteNBoard(BoardVO vo) throws Exception {
+		int result = 0;
+		// 암호 일치 검사
+		// count = 1 (일치함) , count = (암호 일치 하지 않음)
+		int count = boardService.selectNBoardPass(vo); // 성공은 count = 1
+		if(count == 1) {
+			result = boardService.deleteNBoard(vo); // int result = 1; result = 0
+			System.out.println("암호가 일치 합니다. 삭제 되었습니다.");
+		}else if(count == 0) {
+			result = -1;
+			System.out.println("암호가 일치하지 않습니다. 삭제가 실패 하였습니다.");
+		}
+		return result+"";
+	}
 }

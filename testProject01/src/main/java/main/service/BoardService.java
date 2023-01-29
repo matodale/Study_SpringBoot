@@ -21,4 +21,6 @@ public interface BoardService {
 	public int updateNBoard(BoardVO vo) throws Exception;
 	// SELECT COUNT(*) FROM nboard WHERE unq = 1 and pass = 'test'; 게시판 암호 확인
 	public int selectNBoardPass(BoardVO vo) throws Exception;
+	// DELETE FROM nboard WHERE unq = 1 AND pass = test; 게시판 삭제 기능
+	public int deleteNBoard(BoardVO vo) throws Exception;
 }

@@ -4,6 +4,7 @@
 2. 개발 기능 : Dept 부서 테이블 관리, code 테이블 관리
 ### 2023년 01월 05일 첫업로드 전자정보프레임워크 설치, 설정, mysql 연결, <br>기본 MVC 모델 구조 파악하기 샘플을 활용하여 배우기
 
+## testProject01 프로젝트에 작성하였습니다.
 ## 2023년 01월 06일 DB 연결 후 Mysql DB에 저장 완료
 ## 1. 기본 등록용 부서 테이플 활용 및 기본 Spring 
 ### [저장처리] - deptwriteSave.do
@@ -34,7 +35,7 @@
 
 ### [수정화면] - deptModify.do // 수정 화면을 갱신
 
-## 2. 일반게시판 만들기
+## 2. 일반게시판 만들기 (완성 2023년 01월 29일 일요일)
 ### 구조
 1. main.web
     - BoardController.java
@@ -59,5 +60,22 @@
 6. boardDelete.do
 7. passWrite.do
 
+## 3. 회원 관리 전자정부프레임워크(2023년 01월 29일 시작)
+### 구조
+1. memberWrite.do
+2. memberWriteSave.do
+3. idcheck.do
+4. post1.do
+5. post2.do
+6. loginWrite.do
+7. loginWriteSub.do
+8. logout.do
+9. memberModifyWrite.do
+10. memberModifySave.do
 
-
+### 화면 구조
+1. memberWrite.jsp
+2. post1.jsp
+3. post2.jsp
+4. loginWrite.jsp
+5. memberModifyWrite.jsp
