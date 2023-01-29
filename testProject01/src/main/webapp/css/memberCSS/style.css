@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* reset CSS */
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-size:12pt;
+	color:#333333;
+	font-family:맑은 고딕;
+}
+table{
+	max-width:600px;
+	width:100%;
+	border-collapse:collapse;
+}
+th, td{
+	border:1px solid #cccccc;
+	padding:3px;
+}
+
+main .container{
+	width:100%;
+}
+main .container .form_container{
+	max-width:600px;
+	width:100%;
+	margin:0 auto;
+}
