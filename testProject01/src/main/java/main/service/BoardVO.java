@@ -15,8 +15,12 @@ public class BoardVO {
 	// 추가할 내용 페이징 처리할 변수들
 	// 초기값을 설정
 	private int viewPage = 1;
-	private int startIndex = 1;
-	private int endIndex = 10;
+	private int startIndex = 1; // 시작할 1페이지
+	private int endIndex = 10; // 전체로 보여질 게시판 수
+	
+	// jsp 에서의 search 
+	private String searchGubun;
+	private String searchText;
 	
 	public int getUnq() {
 		return unq;
@@ -77,5 +81,17 @@ public class BoardVO {
 	}
 	public void setEndIndex(int endIndex) {
 		this.endIndex = endIndex;
+	}
+	public String getSearchGubun() {
+		return searchGubun;
+	}
+	public void setSearchGubun(String searchGubun) {
+		this.searchGubun = searchGubun;
+	}
+	public String getSearchText() {
+		return searchText;
+	}
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
 	}
 }

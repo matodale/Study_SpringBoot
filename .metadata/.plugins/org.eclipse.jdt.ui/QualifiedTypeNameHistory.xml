@@ -16,4 +16,12 @@
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="javax.faces.convert.Converter"/>
+<fullyQualifiedTypeName name="org.springframework.core.convert.converter.Converter"/>
+<fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
 </qualifiedTypeNameHistroy>

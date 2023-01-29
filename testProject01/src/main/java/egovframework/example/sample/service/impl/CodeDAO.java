@@ -9,6 +9,7 @@ import egovframework.example.sample.service.CodeVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 //4. CodeDAO를 작성 (EgovAbstractDAO) 상속
 // 레포지토리 이름을 다음 클래스에서 쓰입니다. Repository
+
 @Repository("codeDAO") 
 public class CodeDAO extends EgovAbstractDAO{
 	// sql문을 작성할 메소드를 작성한다.
@@ -32,6 +33,7 @@ public class CodeDAO extends EgovAbstractDAO{
 	public CodeVO selectCodesDetail(int code){
 		return (CodeVO)select("codeDAO.selectCodesDetail", code);
 	}
+	
 	public int updateCodes(CodeVO vo) {
 		return (int)update("codeDAO.updateCodes", vo);
 	}

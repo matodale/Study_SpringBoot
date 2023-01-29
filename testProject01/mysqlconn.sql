@@ -127,7 +127,7 @@ desc nboard;
 select * from nboard;
 insert into nboard(title, pass, name, content, rdate) values('엄청난 일이 일어났습니다.', '123', '관리자', '2023년 01월 22일은 설날입니다.', CURRENT_TIMESTAMP());
 delete from nboard where unq = 1;
-SELECT unq, title, name, content, hits, DATE_FORMAT(rdate, '%Y-%m-%d') as rdate FROM nboard ORDER BY unq DESC;
+SELECT unq,pass ,title, name, content, hits, DATE_FORMAT(rdate, '%Y-%m-%d') as rdate FROM nboard ORDER BY unq DESC;
 /* oracle 에서는 to_char() 함수로 적는다. to_char(rdate, 'yyyy-mm-dd') */
 
 /* 패이징 처리에 필요한 SQL문 */
@@ -157,7 +157,7 @@ SELECT b.* FROM (
 */
 SELECT COUNT(*) as total FROM nboard;
 
-
+SELECT unq, title, name, content, DATE_FORMAT(rdate, '%Y-%m-%d') AS rdate FROM nboard WHERE unq = 14;
 
 
 

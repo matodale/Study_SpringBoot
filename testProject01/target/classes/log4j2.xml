@@ -6,7 +6,7 @@
         </Console>
     </Appenders>
     <Loggers><!-- level 속성을 DEBUG 바꾸자. SQL문을 실행 했을 때의 결과를 콘솔창에 보여준다. -->
-        <Logger name="java.sql" level="INFO" additivity="false">
+        <Logger name="java.sql" level="DEBUG" additivity="false">
             <AppenderRef ref="console" />
         </Logger>
         <Logger name="egovframework" level="DEBUG" additivity="false">

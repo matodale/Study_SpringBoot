@@ -17,15 +17,28 @@
 <body>
 	<div class="boardContainer">
 		<div class="boardTableContainer">
+			<div class="boardTitleWrap">
+				<h1 class="boardTitle">
+					<strong>일반 게시판</strong>
+				</h1>
+			</div>
+			<div class="boardSearch">
+				<div class="boardTotal">
+					<p>total : ${total}</p>
+				</div>
+				<div class="boardSearchArea">
+					<form name="searchFrm" method="post" action="boardList.do">
+						<select name="searchGubun" id="searchGubun">
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+							<option value="name">글쓴이</option>
+						</select>
+						<input type="text" name="searchText" id="searchText" class="searchText">
+						<button type="submit">검색</button>
+					</form>
+				</div>
+			</div>
 			<table>
-				<caption>
-					<label for="boardTitle">
-							<strong>일반 게시판</strong>
-					</label>
-					<label for="boardTotal">
-							Total : ${total}
-					</label>
-				</caption>
 				<colgroup>
 					<col width="5%"/>
 					<col width="45%"/>
@@ -40,17 +53,19 @@
 					<th>등록일</th>
 					<th>조회수</th>
 				</tr>
-				<c:set var="cnt" value="1"/><!-- 카운트할 변수를 지정 후 반복문에서 적용하기 -->
+				<c:set var="cnt" value="${rowNumber}"/><!-- 카운트할 변수를 지정 후 반복문에서 적용하기 -->
 				<c:forEach var="result" items="${resultList}">
 					<!-- var 해당 페이지에서 실행할 변수, items 컨트롤러에서의 불러오는 변수 -->
 					<tr align="center">
 						<td><c:out value="${cnt}"/></td>
-						<td align="left"><c:out value="${result.title}"/></td>
+						<td align="left">
+							<a href="boardDetail.do?unq=${result.unq}"><c:out value="${result.title}"/></a>	
+						</td>
 						<td><c:out value="${result.name}"/></td>
 						<td><c:out value="${result.rdate}"/></td><!-- 날짜형식으로만 표현해야 하므로 SQL문에서 함수를 써준다. -->
 						<td><c:out value="${result.hits}"/></td>
 					</tr>
-					<c:set var="cnt" value="${cnt+1}"/>
+					<c:set var="cnt" value="${cnt-1}"/><!-- cnt 는 가감처리 -->
 				</c:forEach>
 					<tr class="bottem_position">
 						<td colspan="4" align="center" class="totalPage">

@@ -2,7 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 <sqlMap namespace="CodeSpace">
 	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
-	<typeAlias  alias="boardVO" type="main.service.impl.BoardVO"/>
+	<typeAlias  alias="boardVO" type="main.service.BoardVO"/>
 	<insert id="boardDAO.insertNBoard">
 		INSERT INTO 
 			nboard(title, 
@@ -22,7 +22,6 @@
 	현재는 MYSQL을 쓰고 있으므로 row_number() over ()
 	-->
 	<select id="boardDAO.selectNBoardList" resultClass="egovMap">
-		<![CDATA[
 			SELECT b.* FROM (
 			SELECT row_number() over (
 			ORDER BY unq DESC) AS rn, a.* FROM (
@@ -33,16 +32,56 @@
 		   		content, 
 		      	hits, 
 		      	DATE_FORMAT(rdate, '%Y-%m-%d') AS rdate 
-			FROM nboard 
+			FROM nboard
+			<isNotNull property="searchGubun"> <!-- 해당 property 값이 null 일 때 if문 -->
+				<isNotNull property="searchText">
+					WHERE $searchGubun$ LIKE '%$searchText$%' <!-- $변수$로 넘어오는 데이터를 알 수 있다. -->
+					<!-- WHERE #searchGubun# LIKE '%'||#searchText#||'%' -->
+				</isNotNull>
+			</isNotNull>
 			ORDER BY unq DESC) 
 			AS a ) 
 			AS b
-			WHERE rn >= #startIndex# AND rn <= #endIndex#
-		]]>
+			WHERE rn >= #startIndex# AND rn<![CDATA[ <= #endIndex#]]>
 	</select>
-	
+	<!-- 검색 기능 추가 
+	SELECT * FROM nboard where title like '%abc%'
+	SELECT * FROM nboard where name like '%abc%'
+	SELECT * FROM nboard where content like '%abc%'
+	 -->
 	<select id="boardDAO.selectNBoardTotal" resultClass="java.lang.Integer">
 		SELECT COUNT(*) as total 
 		FROM nboard 
+		<isNotNull property="searchGubun"> <!-- 해당 property 값이 null 일 때 if문 -->
+			<isNotNull property="searchText">
+				WHERE $searchGubun$ LIKE '%$searchText$%' <!-- $변수$로 넘어오는 데이터를 알 수 있다. -->
+			</isNotNull>
+		</isNotNull>
+	</select>
+	<select id="boardDAO.selectNBoardDetail" resultClass="boardVO"><!-- boardVO 데이터가 전송됨. -->
+		SELECT unq, 
+			 title, 
+			  name, 
+		   content, 
+			 rdate
+		FROM nboard 
+		WHERE unq = '$unq$' <!-- '$ $' 와 # # -->
+	</select>
+	<update id="boardDAO.updateNBoardHits">
+		UPDATE nboard 
+			SET hits = hits+1
+			WHERE unq = #unq#
+	</update>
+	<update id="boardDAO.updateNBoard">
+		UPDATE nboard
+		SET title=#title#,
+			name=#name#,
+			content=#content#
+		WHERE unq=#unq#	
+	</update>
+	<select id="boardDAO.selectNBoardPass" resultClass="java.lang.Integer"><!-- 숫자하나가 넘어가는 SQL문 -->
+		SELECT COUNT(*)
+		FROM nboard
+		WHERE unq=#unq# AND pass=#pass#
 	</select>
 </sqlMap>
