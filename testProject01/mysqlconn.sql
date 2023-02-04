@@ -120,7 +120,7 @@ create table nboard(
 );
 	/* oracle 에서 auto_increate 기능 */	
 	create sequence nboard_seq increment by 1 start with 1 maxvalue 9999;
-	insert into nboard(unq, title, pass, name, content, hits, rdate) values(nboard_seq.nextval,#title#,#pass#, #name#, #content#, 0, sysdate)
+	insert into nboard(unq, title, pass, name, content, hits, rdate) values(nboard_seq.nextval,#title#,#pass#, #name#, #content#, 0, sysdate);
 */
 ALTER TABLE nboard MODIFY COLUMN hits int not null default 0;
 desc nboard;
@@ -158,17 +158,67 @@ SELECT b.* FROM (
 SELECT COUNT(*) as total FROM nboard;
 
 SELECT unq, title, name, content, DATE_FORMAT(rdate, '%Y-%m-%d') AS rdate FROM nboard WHERE unq = 14;
+/* member TABLE 작성 */
+CREATE TABLE member(
+	userid VARCHAR(20) NOT null PRIMARY KEY,
+	pass VARCHAR(20) NOT null,
+	name VARCHAR(20) NOT null,
+	birth DATE NOT null,
+	phone VARCHAR(20) NOT null,
+	gender VARCHAR(1) CHECK (gender IN('M','F')),
+	zipcode VARCHAR(10),
+	address VARCHAR(100),
+	reg TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
+);
+-- gender VARCHAR(1) enum('M','F')
+-- MYSQL 에서 CHECK 변수 대신 함수 
+SELECT * FROM member;
+DESC member;
+DROP TABLE member;
 
+/*
+ * 오라클에서의 작성 방식
+CREATE TABLE member(
+	userid VARCHAR2(20) NOT null,
+	pass VARCHAR2(20) NOT null,
+	name VARCHAR2(20) NOT null,
+	birth DATE NOT null,
+	phone VARCHAR2(20) NOT null,
+	gender VARCHAR2(1),
+	zipcode VARCHAR2(10),
+	address VARCHAR2(100),
+	reg TIMESTAMP DEFAULT sysdate,
+	CONSTRAINT member_pk PRIMARY KEY(userid), /* 제약조건 CONSTRAINT 중복 데이터 방지 PRIMARY KEY */
+	CONSTRAINT member_ck CHECK (gender IN('M','F')) /* 제약조건 CONSTRAINT */
+);
+*/
 
+-- 우편번호 테이블 대량으로 데이터 넣기.
+CREATE TABLE post(
+	a1 VARCHAR(6),
+	a2 VARCHAR(50),
+	a3 VARCHAR(50),
+	a4 VARCHAR(50),
+	a5 VARCHAR(50),
+	a6 VARCHAR(50),
+	a7 VARCHAR(50),
+	a8 VARCHAR(100)
+);
 
-
-
-
-
-
-
-
-
+SELECT * FROM post;
+DESC post;
+use springstudy;
+SHOW TABLES;
+show variables like "secure_file_priv";
+-- 확인해보자.
+show global variables like 'local_infile'; 
+-- off 면 on으로 바꿔준다.
+set global local_infile=true; 
+load data local infile "/Users/parkchoelho/Desktop/Work/eGovFrame_workspace/post1.csv" INTO TABLE post  
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'; 
+/* 터미널에서 실행이 가능함. */
 
 
 
