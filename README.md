@@ -61,7 +61,7 @@
 7. passWrite.do
 
 ## 3. 회원 관리 전자정부프레임워크(2023년 01월 29일 시작)
-### 구조
+### 맵핑 구조
 1. memberWrite.do
 2. memberWriteSave.do
 3. idcheck.do
@@ -72,6 +72,16 @@
 8. logout.do
 9. memberModifyWrite.do
 10. memberModifySave.do
+
+### 파일 구조
+- main.service
+1. MemberVO.java
+2. MemberService.java
+- main.service.impl
+3. MemberServiceImpl.java
+4. MemberDAO.java
+- sql
+5. Member_SQL.xml
 
 ### 화면 구조
 1. memberWrite.jsp

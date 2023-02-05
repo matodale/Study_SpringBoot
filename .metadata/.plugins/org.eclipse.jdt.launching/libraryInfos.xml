@@ -45,7 +45,7 @@
 <entry path="/Library/Java/JavaVirtualMachines/jdk1.8.0_351.jdk/Contents/Home/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home" version="1.8.0_351">
+<libraryInfo home="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home" version="1.8.0_361">
 <bootpath>
 <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/resources.jar"/>
 <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/rt.jar"/>

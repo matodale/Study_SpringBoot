@@ -218,8 +218,34 @@ load data local infile "/Users/parkchoelho/Desktop/Work/eGovFrame_workspace/post
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'; 
-/* 터미널에서 실행이 가능함. */
+/* 터미널에서 실행이 가능함. 
+ * 오라클 SQL Developer 에서는 데이터 임포트를 통해 해당 문서와 연동하여 쓸 수 있다.
+ * 인코딩을 UTF-8 로 변환.
+ * 헤더 체크 해제를 하면 첫번째 데이터를 컬럼명으로 인식하고 데이터를 저장을 할 수 있다.
+ * */
+select count(*) from post;
 
-
-
-
+INSERT INTO member(
+				userid, 
+				pass, 
+				name, 
+				birth, 
+				phone, 
+				gender, 
+				zipcode, 
+				address,
+				reg
+			) 
+	 	VALUES 
+	 		(
+	 			'admin_test', 
+	 			'test1234', 
+	 			'관리자', 
+	 			'2007-06-19', 
+	 			'010-9432-2132', 
+	 			'M', 
+	 			'333-333', 
+	 			'대전광역시 대덕구 중리',
+	 			CURRENT_TIMESTAMP
+	 		);
+SELECT * FROM member;

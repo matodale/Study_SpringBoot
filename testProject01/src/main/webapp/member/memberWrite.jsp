@@ -16,11 +16,59 @@
 <script type="text/javascript" src='<c:url value='/js/jquery-ui.js'/>'></script>
 <script type="text/javascript">
 	$(function() {
+		// 달력 표시
 		$("#birth").datepicker({
 			changeMonth : true,
 			changeYear : true
 		});
-		// 아이디와 패스워드 체크
+		
+		// 아이디 중복 체크 버튼 시작
+		// 아이디가 중복이 되면 실행이 되지 않기 때문에 체크 여부 확인을 해준다.
+		$("#btn_idCheck").click(function(){
+			var userid = $("#userid").val(); // userid 에 id선택자 userid value를 가져온다.
+			userid = $.trim(userid);
+			// 빈칸 오류 체크
+			if(userid == ""){
+				alert("아이디를 입력하세요.");
+				$("#userid").focus();
+				return false;
+			}
+			$("#userid").val(userid);
+			
+			// ajax 체크 시작 
+			$.ajax({
+				// 전송 전 설정 기본 요소
+				type: "POST",
+				data: "userid=" + userid, // 전송 데이터 설정
+				url: "idcheck.do", // 데이터베이스와 연동된 컨트롤러 idcheck.do
+				dataType: "text", // 리턴 타입
+				success: function(result){ // cotroller -> ok 를 전송하면 저장완료메시지를 띄우고 해당 페이지로 이동한다.
+					if(result == "ok"){ // controller 에서의 리턴 타입
+						alert("사용 가능한 아이디입니다.");
+					}else{
+						alert("사용이 가능하지 않습니다. 중복되었습니다.");
+					}
+				},
+				error: function(){ // ajax 상의 장애 발생 시 뜨는 오류입니다. 
+					alert("시스템 오류입니다. 다시 시도해주세요.");
+				}
+			});
+			// ajax 체크 끝
+		});
+		// 아이디 중복 체크 버튼 끝
+		
+		// 우편번호 팝업 버튼 시작
+		$("#btn_zipcode").click(function(){
+			var width = 500; // 팝업 시 넓이
+			var height = 300; // 팝업 시 높이 
+			var name = "zipcode";
+			var option = "width = "+ width + ", height = " + height + ", top = 100, left = 200, location = yes";
+			var url = "post1.do";
+			window.open(url, name, option); // 팝업 명령
+		});
+		// 우편번호 팝업 버튼 끝
+		
+		// 데이터 입력 기능 시작 button type이 button으로 되어 있어야 합니다.
 		$("#btn_submit").click(function() {
 			var userid = $("#userid").val();
 			var pass = $("#pass").val();
@@ -47,32 +95,36 @@
 				$("#name").focus();
 				return false;
 			}
+			
 			$("#userid").val(userid); // val(입력하고자 하는 변수) 실제 화면에서 바뀐다.
 			$("#pass").val(pass);
 			$("#name").val(name);
 			
 			/* ajax 전송 타입으로 작성 */
-			var formData = $("#frm").serialize(); // 폼 데이터를 압축해서 전부 가져온다.
+			var formData = $("#frm").serialize(); 
 			
+			// 폼 데이터를 압축해서 전부 가져온다.
 			$.ajax({
-				type: "POST", // 타입 전송 방식
-				data: formData, // 전송할 데이터 설정
-				url: "memberWriteSave.do", // url를 지정하여 컨트롤러와 연동
-				dataType: "text", // 리턴 타입으로 결과 값을 text 타입으로 전송한다.
-				/* 전송 후 설정 */
-				success: function(result){ // 전송 성공시 다음 명령을 실행함. result 변수에 저장함.
+				// 전송 전 설정 기본 요소
+				type: "POST",
+				data: formData, // 전송 데이터 설정
+				url: "memberWriteSave.do",
+				dataType: "text", // 리턴 타입
+				success: function(result){ // cotroller -> ok 를 전송하면 저장완료메시지를 띄우고 해당 페이지로 이동한다.
 					if(result == "ok"){
-						alert("저장완료");
-						location = "loginWrite.do"; // 로그인 화면으로 지정함.
+						alert("저장하였습니다.");
+						location = "loginWrite.do";
 					}else{
-						alert("저장실패");
+						alert("저장 실패하였습니다. 다시 시도해주세요.");
 					}
 				},
-				error: function(){ // 장애 발생 시스템에서의 장애, 연결이 끊어지거나 하는 경우임.
-					alert("오류발생함. 관리자에게 문의하세요.");
+				error: function(){ // ajax 상의 장애 발생 시 뜨는 오류입니다. 
+					alert("시스템 오류입니다. 다시 시도해주세요.");
 				}
 			});
 		});
+		// 데이터 입력 기능 끝
+		
 	});
 </script>
 </head>
@@ -98,7 +150,7 @@
 						<tr>
 							<th><label for="userid">아이디</label></th>
 							<td><input type="text" name="userid" id="userid" placeholder="아이디입력" maxlength="20">
-								<button type="button">중복체크</button></td>
+								<button type="button" id="btn_idCheck">중복체크</button></td>
 						</tr>
 						<tr>
 							<th><label for="pass">암호</label></th>
@@ -119,7 +171,7 @@
 						</tr>
 						<tr>
 							<th><label for="birth">생년월일</label></th>
-							<td><input type="text" name="birth" id="birth" readonly placeholder="생년월일 입력"></td>
+							<td><input type="text" name="birth" id="birth" placeholder="생년월일 입력"></td>
 						</tr>
 						<tr>
 							<th><label for="phone">연락처</label></th>
@@ -129,14 +181,14 @@
 						<tr>
 							<th><label for="zipcode">주소</label></th>
 							<td><input type="text" name="zipcode" id="zipcode" placeholder="우편번호 입력">
-								<button type="button">우편번호찾기</button> 
+								<button type="button" id="btn_zipcode">우편번호찾기</button> 
 								<br>
 								<input type="text" name="address" id="address" placeholder="주소 입력" maxlength="50">
 							</td>
 						</tr>
 					</table>
 					<div class="btn">
-						<button type="submit" id="btn_submit">저장</button>
+						<button type="button" id="btn_submit">저장</button>
 						<button type="reset">취소</button>
 					</div>
 				</form>

@@ -38,9 +38,9 @@
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item key="DIALOG_X_ORIGIN" value="562"/>
 		<item key="DIALOG_Y_ORIGIN" value="86"/>
-		<item key="DIALOG_WIDTH" value="557"/>
-		<item key="DIALOG_HEIGHT" value="639"/>
-		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		<item key="DIALOG_WIDTH" value="660"/>
+		<item key="DIALOG_HEIGHT" value="726"/>
+		<item key="DIALOG_FONT_NAME" value="1|D2Coding|14.0|0|COCOA|1|D2Coding"/>
 	</section>
 	<section name="RefactoringWizard.preview">
 		<item key="width" value="600"/>
@@ -60,9 +60,9 @@
 	<section name="DialogBounds_SuperInterfaceSelectionDialog">
 		<item key="DIALOG_X_ORIGIN" value="98"/>
 		<item key="DIALOG_Y_ORIGIN" value="8"/>
-		<item key="DIALOG_WIDTH" value="391"/>
-		<item key="DIALOG_HEIGHT" value="461"/>
-		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		<item key="DIALOG_WIDTH" value="406"/>
+		<item key="DIALOG_HEIGHT" value="541"/>
+		<item key="DIALOG_FONT_NAME" value="1|D2Coding|14.0|0|COCOA|1|D2Coding"/>
 	</section>
 	<section name="NewPackageWizardPage">
 		<item key="create_package_info_java" value="false"/>
