@@ -59,7 +59,7 @@
 		
 		// 우편번호 팝업 버튼 시작
 		$("#btn_zipcode").click(function(){
-			var width = 500; // 팝업 시 넓이
+			var width = 600; // 팝업 시 넓이
 			var height = 300; // 팝업 시 높이 
 			var name = "zipcode";
 			var option = "width = "+ width + ", height = " + height + ", top = 100, left = 200, location = yes";
@@ -142,7 +142,7 @@
 						</tr>
 					</thead>
 				</table>
-				<form id="frm">
+				<form id="frm" name="frm">
 					<table>
 						<caption>
 							<strong>회원가입 폼</strong>

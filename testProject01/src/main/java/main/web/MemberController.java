@@ -1,10 +1,12 @@
 package main.web;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -62,6 +64,14 @@ public class MemberController {
 	@RequestMapping("/post1.do")
 	public String post1() {
 		return "member/post1";
+	}
+	
+	@RequestMapping("/post2.do")
+	public String post2(String dong, ModelMap model) throws Exception{
+		List<?> list = memberService.selectPostList(dong);
+		// System.out.println("list : " + list);
+		model.addAttribute("resultList", list);
+		return "member/post2";
 	}
 }
 

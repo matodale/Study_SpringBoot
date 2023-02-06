@@ -211,7 +211,7 @@ use springstudy;
 SHOW TABLES;
 show variables like "secure_file_priv";
 -- 확인해보자.
-show global variables like 'local_infile'; 
+show global variables like 'local_infile';
 -- off 면 on으로 바꿔준다.
 set global local_infile=true; 
 load data local infile "/Users/parkchoelho/Desktop/Work/eGovFrame_workspace/post1.csv" INTO TABLE post  
@@ -249,3 +249,40 @@ INSERT INTO member(
 	 			CURRENT_TIMESTAMP
 	 		);
 SELECT * FROM member;
+/* Mysql 문*/
+SELECT 
+CONCAT('[', a1, ']', ' ',
+CONCAT_WS(' ',
+a2, 
+a3, 
+a4, 
+a5,
+a6,
+a7,
+a8))
+			   AS addr
+		FROM post 
+		WHERE 
+				a4 LIKE '%지산동%' 
+			 OR 
+			 	a5 LIKE '%지산동%'; 
+ALTER table post add a6 VARCHAR(50);
+select * from post;
+drop table post;
+/*
+ * 오라클 SQL
+SELECT '[' || a1 || ']' ||
+' ' || a2 || 
+' ' || a3 || 
+' ' || a4 ||<!-- 동 -->
+' ' || a5 ||<!-- 리 -->
+' ' || a6 ||
+' ' || a7 ||
+' ' || a8 
+			   AS addr
+		FROM post 
+		WHERE 
+				a4 LIKE '%'||#dong#||'%' 
+			 OR 
+			 	a5 LIKE '%'||#dong#||'%' 
+*/

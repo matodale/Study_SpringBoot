@@ -1,5 +1,7 @@
 package main.service;
 
+import java.util.List;
+
 public interface MemberService {
 	/*
 	 * 회원 등록 처리
@@ -13,4 +15,10 @@ public interface MemberService {
 	 * */
 	public int selectMemberIdCheck(String userid) throws Exception;
 	
+	/*
+	 * 우편번호 주소 검색
+	 * select a2 as dong from post;
+	 * result 값 
+	 * */
+	public List<?> selectPostList(String dong) throws Exception;
 }
