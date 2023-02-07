@@ -130,18 +130,9 @@
 </head>
 <body>
 	<main>
-		<div class="container">
+		<div class="membercontainer">
 			<div class="form_container">
-				<table>
-					<thead>
-						<tr>
-							<th width="25%">홈</th>
-							<th width="25%"><a href="<c:url value='/boardList.do'/>">게시판</a></th>
-							<th width="25%"><a href="<c:url value='/memberWrite.do'/>">회원가입</a></th>
-							<th width="25%"><a href="<c:url value='/'/>">로그인</a></th>
-						</tr>
-					</thead>
-				</table>
+				<%@ include file="../include/top.jsp" %>
 				<form id="frm" name="frm">
 					<table>
 						<caption>

@@ -15,6 +15,7 @@
 	href="<c:url value='/css/boardCss/style.css'/>" />
 </head>
 <body>
+	<%@ include file="../include/top.jsp" %>
 	<div class="boardContainer">
 		<div class="boardTableContainer">
 			<div class="boardTitleWrap">

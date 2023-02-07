@@ -21,4 +21,11 @@ public interface MemberService {
 	 * result 값 
 	 * */
 	public List<?> selectPostList(String dong) throws Exception;
+	
+	/*
+	 * 로그인 기능 아이디와 해당 패스워드 일치 하는지 판단 기능
+	 * select count(*) from member where userid='' and pass = '';
+	 * result 값은 일치 하면 1
+	 * */
+	public int selectMemberCount(MemberVO vo) throws Exception;
 }

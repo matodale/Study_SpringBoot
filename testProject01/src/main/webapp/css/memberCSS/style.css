@@ -41,22 +41,22 @@ input[type=password] {
 	width:60%;
   	outline: none;
 }
-main .container{
+main .membercontainer{
 	width:100%;
 }
-main .container .form_container{
+main .membercontainer .form_container{
 	max-width:600px;
 	width:100%;
 	margin:0 auto;
 }
 
-main .container .form_container #frm table caption{
+main .membercontainer .form_container #frm table caption{
 	margin-top:10px;
 	margin-bottom:5px;
 	font-size:20pt;
 	font-weight:bold;
 }
-main .container .form_container #frm .btn{
+main .membercontainer .form_container #frm .btn{
 	text-align:right;
 	margin-top:5px;
 }

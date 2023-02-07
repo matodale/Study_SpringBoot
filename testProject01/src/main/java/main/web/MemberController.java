@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -72,6 +73,34 @@ public class MemberController {
 		// System.out.println("list : " + list);
 		model.addAttribute("resultList", list);
 		return "member/post2";
+	}
+	
+	@RequestMapping("/loginWrite.do")
+	public String loginWrite() {
+		return "member/loginWrite";
+	}
+	
+	@RequestMapping("/loginWriteSub.do")
+	@ResponseBody
+	public String loginProcessing(MemberVO vo, HttpSession session) throws Exception{
+		int count = memberService.selectMemberCount(vo);
+		String msg = "";
+		if(count == 1) {
+			// session 만들기
+			// msg 처리 
+			System.out.println(count + " : 아이디와 패스워드 일치합니다.");
+			session.setAttribute("SessionUserID", vo.getUserid());
+			msg = "ok";
+		}else {
+			System.out.println(count + " : 아이디와 패스워드 일치하지 않습니다.");
+		}
+		return msg;
+	}
+	
+	@RequestMapping("/logout.do")
+	public String loginout(HttpSession session) {
+		session.removeAttribute("SessionUserID");
+		return "member/loginWrite";
 	}
 }
 
